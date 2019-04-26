@@ -1,5 +1,5 @@
 // Widh Jio
-import { app, BrowserWindow } from 'electron'
+const { app, BrowserWindow } = require('electron')
 
 // Keep this as a global reference to avoid garbage collecting of this
 let wMain
@@ -19,7 +19,7 @@ const startMain = async () => {
   })
   // Set properties of window object
   wMain.setResizable(true)
-  if (process.env.NODE_ENV === 'dev') {
+  if (process.env.SYAA_MODE === 'dev') {
     console.log('Running in development mode.')
     wMain.loadURL('http://localhost:4200/')
   } else {

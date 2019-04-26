@@ -3,6 +3,8 @@
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
+  // Remove '-cli' from appname
+  defaults.project.pkg.name = 'syaa'
   let app = new EmberApp(defaults, {
     // Add options here
   });
