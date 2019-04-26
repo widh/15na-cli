@@ -1,11 +1,11 @@
 {
-  "name": "syaa",
-  "version": "0.0.0",
+  "name": "syaa-cli",
+  "version": "1.0.0",
   "private": true,
-  "description": "Small description for syaa goes here",
-  "repository": "",
-  "license": "MIT",
-  "author": "",
+  "description": "Syncope Alarm for Alones",
+  "repository": "https://github.com/widh/syaa-cli.git",
+  "license": "MPL-2.0",
+  "author": "Jio <jio@widh.me>",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -21,6 +21,7 @@
     "@ember/jquery": "^0.5.2",
     "@ember/optional-features": "^0.6.3",
     "broccoli-asset-rev": "^2.7.0",
+    "electron": "^5.0.0",
     "ember-ajax": "^5.0.0",
     "ember-cli": "~3.9.0",
     "ember-cli-app-version": "^3.2.0",
