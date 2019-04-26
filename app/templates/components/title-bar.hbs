@@ -1,2 +1,15 @@
-{{yield}}
-<h1>haihai</h1>
+<div id="title-bar">
+  <div class="logo left">
+    {{#if this.title}}
+      <span>{{this.title}}</span>
+    {{else}}
+      <img src="/images/logo.svg" alt="Syaa Logo">
+    {{/if}}
+  </div>
+  <div class="control right">
+    {{#if this.isMain}}
+      <button id="minimize" title="Minimize the window" {{action "minWindow"}}></button>
+    {{/if}}
+    <button id="close" title="Close the window" {{action "closeWindow"}}></button>
+  </div>
+</div>

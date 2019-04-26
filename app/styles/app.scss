@@ -1,3 +1,15 @@
+@import 'font';
+@import 'comp';
+
 body {
-  padding: 0;
+  margin: 0;
+  color: #eaeaea;
+  background-color: #222;
+
+  * {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
 }
+
+.left { float: left }
+.right { float: right }

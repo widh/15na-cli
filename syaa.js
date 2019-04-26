@@ -13,6 +13,7 @@ const startMain = async () => {
     backgroundColor: '#222',
     show: false,
     frame: false,
+    icon: 'public/app.ico',
     webPreferences: {
       nodeIntegration: true
     }
@@ -35,8 +36,8 @@ const startMain = async () => {
 }
 
 // For windows alarm
-app.setAppUserModelId("widh.syaa")
-app.setAsDefaultProtocolClient("syaa")
+app.setAppUserModelId('widh.syaa')
+app.setAsDefaultProtocolClient('syaa')
 app.on('ready', startMain)
 
 // Quit when all windows are closed

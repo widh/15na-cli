@@ -8,8 +8,8 @@ module.exports = {
     'ember'
   ],
   extends: [
-    'eslint:recommended',
-    'plugin:ember/recommended'
+    'standard',
+    'plugin:ember/base'
   ],
   env: {
     browser: true,
@@ -41,4 +41,4 @@ module.exports = {
       }
     }
   ]
-};
+}
