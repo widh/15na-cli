@@ -1,0 +1,23 @@
+#alert {
+  background-color: $global-danger-background;
+  height: 100vh;
+  width: 100vw;
+
+  #alert-container {
+    padding: 20px;
+
+    #alert-control {
+      float: right;
+      width: 100%;
+      margin: 20px 0 50px;
+    }
+
+    #alert-icon {
+      float: right;
+
+      img {
+        height: 50vh;
+      }
+    }
+  }
+}

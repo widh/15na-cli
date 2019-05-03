@@ -1,8 +1,8 @@
 @import "common";
 @import "uikit";
-@import "font";
-@import "comp";
-@import "route";
+@import "fonts";
+@import "components";
+@import "routes";
 
 html {
   color: $textCara;
@@ -17,15 +17,36 @@ html {
   }
 }
 
+.if {
+  &.set, &.not {
+    .true {
+      display: initial;
+    }
+    .false {
+      display: none;
+    }
+  }
+  &, &.not.set {
+    .true {
+      display: none;
+    }
+    .false {
+      display: initial;
+    }
+  }
+}
+
+.white {
+  color: white;
+}
+
 .left {
   float: left;
 }
 .right {
   float: right;
 }
-.inline {
-  display: inline-block;
-}
+
 .div-inline div {
   display: inline-block;
 }
@@ -42,16 +63,16 @@ html {
     font-weight: 100;
   }
 
-  .variable-field {
+  .variable {
     font-weight: 800;
-    font-size: 1em;
-    margin-left: 15px;
     font-style: italic;
-    opacity: .75;
 
-    &.normal-mode {
-      margin-left: 0;
-      opacity: 1;
+    &.table-like {
+      margin-left: 15px;
+    }
+
+    &.unemphasize {
+      opacity: .75;
     }
   }
 }

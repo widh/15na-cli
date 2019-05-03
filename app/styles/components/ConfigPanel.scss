@@ -1,0 +1,10 @@
+@import '../common.scss';
+
+#config-panel {
+  height: $mainConfHeig + 2 * $mainHrMargVert;
+
+  input[type="text"], input[type="password"] {
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: .8rem;
+  }
+}
