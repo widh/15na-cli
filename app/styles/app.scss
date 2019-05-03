@@ -1,15 +1,57 @@
-@import 'font';
-@import 'comp';
+@import "common";
+@import "uikit";
+@import "font";
+@import "comp";
+@import "route";
 
-body {
-  margin: 0;
-  color: #eaeaea;
-  background-color: #222;
+html {
+  color: $textCara;
+  background-color: $bgCara;
 
-  * {
-    font-family: 'Noto Sans KR', sans-serif;
+  body {
+    margin: 0;
+
+    * {
+      font-family: "Noto Sans KR", sans-serif;
+    }
   }
 }
 
-.left { float: left }
-.right { float: right }
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.inline {
+  display: inline-block;
+}
+.div-inline div {
+  display: inline-block;
+}
+
+.contents {
+  h1 {
+    font-weight: 800;
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: .9rem;
+    font-weight: 100;
+  }
+
+  .variable-field {
+    font-weight: 800;
+    font-size: 1em;
+    margin-left: 15px;
+    font-style: italic;
+    opacity: .75;
+
+    &.normal-mode {
+      margin-left: 0;
+      opacity: 1;
+    }
+  }
+}

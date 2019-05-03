@@ -1,0 +1,9 @@
+#alert {
+  background-color: $global-danger-background;
+  height: 100vh;
+  width: 100vw;
+
+  #alert-container {
+    padding: 20px;
+  }
+}

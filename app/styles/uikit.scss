@@ -1,0 +1,19 @@
+@import "common";
+
+$global-emphasis-color: $textCara;
+$global-color: $textCara;
+$global-inverse-color: $bgCara;
+$global-background: $bgCara;
+$global-muted-background: $bgCara;
+$button-primary-hover-color: $global-color;
+$button-primary-color: $global-color;
+$global-border: $emp2BgCara;
+$global-medium-font-size: 12px;
+$global-font-family: 'Noto Sans', sans-serif;
+$global-margin: 15px;
+
+.uk-input {
+  width: auto !important;
+}
+
+@import "ember-uikit";

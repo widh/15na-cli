@@ -1,0 +1,10 @@
+@import '../common.scss';
+
+#config {
+  height: $mainConfHeig + 2 * $mainHrMargVert;
+
+  input {
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: .8rem;
+  }
+}

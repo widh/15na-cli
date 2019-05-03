@@ -22,9 +22,9 @@ const startMain = async () => {
   wMain.setResizable(true)
   if (process.env.SYAA_MODE === 'dev') {
     console.log('Running in development mode.')
-    wMain.loadURL('http://localhost:4200/')
+    wMain.loadURL('http://localhost:4200/main')
   } else {
-    wMain.loadFile('dist/index.html')
+    wMain.loadFile('dist/index.html#/main')
   }
   // Bind event handlers
   wMain.once('closed', () => {
