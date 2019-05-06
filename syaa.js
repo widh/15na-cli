@@ -9,7 +9,9 @@ const startMain = async () => {
   // Create window object
   wMain = new BrowserWindow({
     width: 768,
+    minWidth: 780,
     height: 400,
+    minHeight: 320,
     backgroundColor: '#222',
     show: false,
     frame: false,
