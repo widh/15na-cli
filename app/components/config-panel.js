@@ -14,8 +14,8 @@ export default Component.extend({
       { label: 'Close', type: 'normal', click: () => remote.app.quit() }
     ])
     tray.setContextMenu(trayContextMenu)
-    tray.setToolTip('Syaa')
-    tray.setTitle('Syaa')
+    tray.setToolTip('15na')
+    tray.setTitle('15na')
     tray.on('double-click', openWindow)
 
     // Connect to socket.io & do it!
@@ -35,7 +35,7 @@ export default Component.extend({
       })
       // Set properties of window object
       wAlert.setResizable(true)
-      if (process.env.SYAA_MODE === 'dev') {
+      if (process.env.15na_MODE === 'dev') {
         console.log('Running in development mode.')
         wAlert.loadURL('http://localhost:4200/alert')
       } else {
@@ -59,7 +59,7 @@ export default Component.extend({
       const confSpinnerCont = document.getElementById('config-spinner-container')
       confSpinnerCont.classList.add('set')
       // Set socket.io features
-      const io = socketIO(`https://${site || 'localhost'}/syaa-ws/in`)
+      const io = socketIO(`https://${site || 'localhost'}/15na-ws/in`)
       io.on('connect_error', () => {
         confSpinnerCont.classList.remove('set')
       })

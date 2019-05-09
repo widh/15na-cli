@@ -1,19 +1,19 @@
 {
-  "name": "syaa-cli",
+  "name": "15na-cli",
   "version": "1.0.0",
   "private": true,
-  "description": "Client for Syaa: Syncope Alarm for Alones",
-  "repository": "https://github.com/widh/syaa-cli.git",
+  "description": "Client for 15na: Syncope Alarm for Alones",
+  "repository": "https://github.com/widh/15na-cli.git",
   "license": "MPL-2.0",
   "author": "Jio <jio@widh.me>",
-  "main": "syaa.js",
+  "main": "15na.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "pack": "yarn pack-electron-all",
-    "pack-all": "electron-packager . Syaa --all --overwrite --out ./out",
-    "pack-win": "electron-packager . Syaa --platform=win32 --overwrite --out ./out",
+    "pack-all": "electron-packager . 15na --all --overwrite --out ./out",
+    "pack-win": "electron-packager . 15na --platform=win32 --overwrite --out ./out",
     "mi": "yarn make-installer",
     "mi-all": "yarn make-installer-all",
     "mi-win": "yarn make-installer-win",
@@ -27,15 +27,15 @@
     "start-ember": "ember serve",
     "sel": "yarn start-electron-dev",
     "sel-dist": "yarn start-electron-dist",
-    "start-electron-dev": "set SYAA_MODE=dev&& electron .",
+    "start-electron-dev": "set 15na_MODE=dev&& electron .",
     "start-electron-dist": "electron . --",
     "test": "ember test"
   },
   "build": {
-    "appId": "me.widh.syaa",
-    "productName": "Syaa",
+    "appId": "me.widh.15na",
+    "productName": "15na",
     "publish": [{
-      
+
     }]
   },
   "devDependencies": {

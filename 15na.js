@@ -22,7 +22,7 @@ const startMain = async () => {
   })
   // Set properties of window object
   wMain.setResizable(true)
-  if (process.env.SYAA_MODE === 'dev') {
+  if (process.env.15na_MODE === 'dev') {
     console.log('Running in development mode.')
     wMain.loadURL('http://localhost:4200/main')
   } else {
@@ -38,8 +38,8 @@ const startMain = async () => {
 }
 
 // For windows alarm
-app.setAppUserModelId('widh.syaa')
-app.setAsDefaultProtocolClient('syaa')
+app.setAppUserModelId('widh.15na')
+app.setAsDefaultProtocolClient('15na')
 app.on('ready', startMain)
 
 // Quit when all windows are closed

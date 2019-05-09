@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'syaa',
+    modulePrefix: '15na',
     environment,
     rootURL: '/',
     locationType: 'auto',
