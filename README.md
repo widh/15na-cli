@@ -2,13 +2,13 @@
 
 *IRONA Alarm App for Clients*
 
-This is a program that notifies fall detection from acquiring fall information from [15na-server](https://github.com/wldh-g/15na-server).
+This is a program that notifies fall detection from acquiring fall information from [15na-server](https://github.com/wldh-g/15na-server#readme).
 
 By building electron app, this works on almost all operating system include Mac, Windows, Linux.
 
 ### Requirements
 
-- **Node 10+**
+- **Node LTS**
 
 ### How To Use
 

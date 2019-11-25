@@ -1,0 +1,9 @@
+#title-bar {
+  background-color: rgba(244, 244, 244, .3);
+  width: 100vw;
+  height: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-app-region: drag;
+}

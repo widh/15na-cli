@@ -2,13 +2,20 @@
   "name": "15na-cli",
   "version": "1.1.0",
   "description": "IRONA Client: Fall alarm program",
-  "main": "15na.js",
+  "main": "src/15na.js",
   "repository": "https://github.com/wldh-g/15na-cli.git",
   "author": "Jio <jio@wldh.org>",
   "license": "MPL-2.0",
   "private": true,
+  "scripts": {
+    "build-react": "set IRONA_MODE=prod&& webpack --config=./.webpack.js --mode=production",
+    "build-app": "",
+    "start-react": "set IRONA_MODE=dev&& webpack-dev-server --config=./.webpack.js --mode=development",
+    "start-app": "set IRONA_MODE=dev&& electron .",
+    "pack-app": ""
+  },
   "build": {
-    "appId": "org.wldh.15na",
+    "appId": "org.wldh.irona",
     "productName": "IRONA",
     "publish": [
       {}
@@ -18,19 +25,41 @@
     "node": ">= 10.*"
   },
   "dependencies": {
+    "@hot-loader/react-dom": "^16.11.0",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "@uifabric/icons": "^7.3.0",
     "electron": "^7.1.2",
     "electron-builder": "^21.2.0",
+    "office-ui-fabric-react": "^7.64.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-hot-loader": "^4.12.18",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.4",
+    "socket.io-client": "^1.7.4",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
     "eslint": "^6.7.0",
+    "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-app": "^6.0.3",
-    "eslint-plugin-react-hooks": "^2.3.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-redux": "^7.1.3",
-    "redux": "^4.0.4",
-    "socket.io-client": "^1.7.4",
-    "eslint-config-airbnb": "^18.0.1"
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack-dev-server": "^3.9.0"
   }
 }
