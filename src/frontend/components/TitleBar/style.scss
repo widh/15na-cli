@@ -1,9 +1,39 @@
 #title-bar {
-  background-color: rgba(244, 244, 244, .3);
+  background-color: rgba(244, 244, 244, .16);
   width: 100vw;
   height: 30px;
   position: fixed;
   top: 0;
   left: 0;
   -webkit-app-region: drag;
+
+  #title-bar-label {
+    display: inline-block;
+    margin-left: 10px;
+    line-height: 30px;
+    padding: 0;
+    font-weight: bold;
+    position: relative;
+    font-size: 20px;
+    opacity: .88;
+    font-style: italic;
+    vertical-align: middle;
+
+    &::before, &::after {
+      content: 'IRONA';
+      opacity: 0.4;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &::before {
+      color: pink;
+      left: .24ex;
+    }
+
+    &::after {
+      color: skyblue;
+      left: .48ex;
+    }
+  }
 }

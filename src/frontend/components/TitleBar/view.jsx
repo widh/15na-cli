@@ -24,7 +24,7 @@ export default class TitleBarView extends React.Component {
   render() {
     return (
       <div id="title-bar">
-        <Label style={{ display: 'inline-block', marginLeft: '5px' }}>IRONA</Label>
+        <Label id="title-bar-label">IRONA</Label>
         <WindowButtonContainer>
           <WindowButton
             icon="ChromeMinimize"
