@@ -1,0 +1,38 @@
+.alertPage {
+  background: indianred;
+  width: calc(100vw - 40px);
+  height: calc(100vh - 70px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 50px 20px 20px;
+
+  .fallTextContainer {
+    color: white;
+
+    .fallText {
+      display: block;
+      word-break: keep-all;
+    }
+
+    .fallProb {
+      opacity: .6;
+    }
+  }
+
+  .fallMessage {
+    color: white;
+    opacity: .4;
+  }
+
+  .fallButton {
+    margin-top: 30px;
+    display: block;
+  }
+
+  audio {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "presets": [
+    "@babel/env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel"
+  ],
+  "env": {
+    "dev": {
+      "plugins": [
+        [
+          "babel-plugin-react-css-modules",
+          {
+            "webpackHotModuleReloading": true,
+            "autoResolveMultipleImports": true,
+            "filetypes": {
+              ".scss": {
+                "syntax": "postcss-scss",
+                "plugins": [
+                  "postcss-nested"
+                ]
+              }
+            },
+            "generateScopedName": "[local]-[hash:base64:6]"
+          }
+        ]
+      ]
+    },
+    "prod": {
+      "plugins": [
+        [
+          "babel-plugin-react-css-modules",
+          {
+            "autoResolveMultipleImports": true,
+            "filetypes": {
+              ".scss": {
+                "syntax": "postcss-scss",
+                "plugins": [
+                  "postcss-nested"
+                ]
+              }
+            },
+            "generateScopedName": "[hash:base64]"
+          }
+        ]
+      ]
+    }
+  }
+}

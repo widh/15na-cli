@@ -1,24 +1,23 @@
-# 15na Client
-**Sy**ncope **A**larm for **A**lones<sup>*</sup>
+# 15na Client App
 
-<sub>* Alones : people who living alone</sub>
+*IRONA Alarm App for Clients*
 
-![Travis CI](https://travis-ci.com/widh/15na-cli.svg?branch=master)
-![devDependencies Status](https://david-dm.org/widh/15na-cli/dev-status.svg)
-![Code Climate Status](https://codeclimate.com/github/widh/15na-cli/badges/gpa.svg)
-![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)
+This is a program that notifies fall detection from acquiring fall information from [15na-server](https://github.com/wldh-g/15na-server#readme).
 
----
+By building electron app, this works on almost all operating system include Mac, Windows, Linux.
 
-## How to use
+### Requirements
 
-Now on development.
+- **Node LTS**
 
-## Supported environments
+### How To Use
 
-Now on development.
+1. `yarn` or `npm install -D`
+2. `yarn build` or `npm build`
+3. `yarn start` or `npm start`
 
 ---
 
-## License
-This project follows **Mozilla Public License 2.0**. Look [LICENSE.md](LICENSE.md) for more full text of the license.
+### License
+
+This program is under **MPL-2.0** license. Look [LICENSE.md](LICENSE.md) for the full text of the license.

@@ -1,0 +1,34 @@
+.register {
+  &-form {
+    position: relative;
+    max-width: 480px;
+    transition: padding .35s ease-out, opacity .5s ease-in-out;
+  }
+
+  &-title {
+    color: var(--fore-color);
+  }
+
+  &-inputs, &-button, &-message {
+    margin-top: 20px;
+  }
+
+  &-field {
+    margin-bottom: 15px;
+  }
+
+  &-info {
+    color: gray;
+    display: block;
+    margin-top: 20px;
+  }
+
+  &-spinner {
+    margin-top: 26px;
+    margin-left: 10px;
+  }
+
+  &-spinner, &-info, &-button {
+    float: left;
+  }
+}

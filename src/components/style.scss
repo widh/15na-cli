@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+
+  &, * {
+    --over-color: rgba(164, 164, 164, .36);
+    -webkit-user-select: none;
+  }
+
+  .client {
+    background-color: var(--back-color);
+    padding-top: 30px;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+[data-theme="dark"] {
+  &, * {
+    --fore-color: #fff;
+    --back-color: #2b2b2b;
+  }
+}
+
+[data-theme="light"] {
+  &, * {
+    --fore-color: #2b2b2b;
+    --back-color: #fff;
+  }
+}
