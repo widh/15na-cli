@@ -15,6 +15,7 @@ type Props = {
     resolve: () => void,
     reject: (reason: string) => void
   ) => void
+  registerHost: (host: string) => void
 }
 
 type States = {
@@ -50,7 +51,6 @@ export default class RegisterForm extends React.Component<Props, States> {
       (error, data) => {
         if (!error) {
           this.setState(data);
-          console.log(data);
         }
       },
     );
@@ -61,25 +61,24 @@ export default class RegisterForm extends React.Component<Props, States> {
     this.connectIRONA = this.connectIRONA.bind(this);
   }
 
-  hideServerConErrorMessage() {
-    this.setState({ serverConErrorMessage: '' });
-  }
-
-  hideClidInputErrorMessage() {
-    this.setState({ clidInputErrorMessage: '' });
-  }
-
-  hideServerURLInputErrorMessage() {
-    this.setState({ serverURLInputErrorMessage: '' });
+  componentDidMount() {
+    const { serverURLInputID } = this.state;
+    document.getElementById(serverURLInputID).focus();
   }
 
   connectIRONA() {
-    const { registerInfo, registerSocket } = this.props;
+    const {
+      registerInfo, registerSocket, registerHost,
+    } = this.props;
     const {
       serverURLInputID, clidInputID, recentCLID, recentServerURL,
     } = this.state;
-    const serverURL = (document.getElementById(serverURLInputID) as HTMLInputElement).value || recentServerURL;
-    const clid = (document.getElementById(clidInputID) as HTMLInputElement).value || recentCLID;
+    const serverURL = (
+      document.getElementById(serverURLInputID) as HTMLInputElement
+    ).value || recentServerURL;
+    const clid = (
+      document.getElementById(clidInputID) as HTMLInputElement
+    ).value || recentCLID;
     const setError = (error) => this.setState({ serverConErrorMessage: error });
     setError('');
 
@@ -97,9 +96,18 @@ export default class RegisterForm extends React.Component<Props, States> {
     }
 
     if (canContinue) {
-      const setStatus = (state) => this.setState({ serverConStatus: state });
+      const serverInputDOM = document.getElementById(serverURLInputID);
+      const setStatus = (state: string) => {
+        this.setState({ serverConStatus: state });
+        if (state.length === 0) {
+          if (serverInputDOM && serverInputDOM.focus) {
+            serverInputDOM.focus();
+          }
+        }
+      };
       const hideForm = () => this.setState({ showForm: false });
-      const io = socket(`https://${serverURL}/15na-ws/out`);
+      const host = `https://${serverURL}/`;
+      const io = socket(`${host}15na-ws/out`);
       setStatus('Connecting to central host...');
       io.on('connect_error', (error) => {
         io.close();
@@ -134,8 +142,9 @@ export default class RegisterForm extends React.Component<Props, States> {
                 hideForm();
                 setTimeout(() => {
                   setStatus('');
+                  registerHost(host);
                   registerSocket(io);
-                }, 1000);
+                }, 500);
               },
               (reason) => {
                 clearTimeout(regTimeout);
@@ -159,6 +168,18 @@ export default class RegisterForm extends React.Component<Props, States> {
         setStatus('');
       });
     }
+  }
+
+  hideServerConErrorMessage() {
+    this.setState({ serverConErrorMessage: '' });
+  }
+
+  hideClidInputErrorMessage() {
+    this.setState({ clidInputErrorMessage: '' });
+  }
+
+  hideServerURLInputErrorMessage() {
+    this.setState({ serverURLInputErrorMessage: '' });
   }
 
   render() {

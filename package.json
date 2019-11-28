@@ -7,20 +7,19 @@
   "author": "Jio <jio@wldh.org>",
   "license": "MPL-2.0",
   "private": true,
+  "devPort": 33333,
   "scripts": {
     "build-web": "set IRONA_MODE=prod&& set BABEL_ENV=prod&& webpack --config=./.webpack.prod.js",
     "start-web": "set IRONA_MODE=dev&& set BABEL_ENV=dev&& webpack-dev-server --config=./.webpack.dev.js",
     "start-app": "set IRONA_MODE=dev&& electron .",
     "start-app-local": "set IRONA_MODE=prod&& electron .",
-    "build-app": "",
-    "pack-app": ""
+    "build-app": "echo 'Not Implemented Yet'",
+    "pack-app": "echo 'Not Implemented Yet'"
   },
   "build": {
     "appId": "org.wldh.irona",
     "productName": "IRONA",
-    "publish": [
-      {}
-    ]
+    "publish": [{}]
   },
   "engines": {
     "node": ">= 10.*"
@@ -30,7 +29,7 @@
     "@uifabric/icons": "^7.3.0",
     "electron": "^7.1.2",
     "electron-json-storage": "^4.1.8",
-    "office-ui-fabric-react": "^7.64.2",
+    "office-ui-fabric-react": "^7.66.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-hot-loader": "^4.12.18",

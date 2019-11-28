@@ -1,8 +1,15 @@
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
 
+const packageInfo = fs.readFileSync('./package.json').toString();
+const port = JSON.parse(packageInfo).devPort;
+
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'components', 'index.tsx'),
+  entry: {
+    main: path.resolve(__dirname, 'src', 'components', 'main.tsx'),
+    alert: path.resolve(__dirname, 'src', 'components', 'alert.tsx'),
+  },
   mode: 'development',
   module: {
     rules: [
@@ -70,12 +77,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'),
     publicPath: '/',
-    filename: path.join('dist', 'app.js'),
+    filename: path.join('dist', '[name].js'),
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
-    port: 14833,
-    publicPath: 'http://localhost:14833/',
+    port,
+    publicPath: `http://localhost:${port}/`,
     hotOnly: true,
   },
   devtool: 'source-map',

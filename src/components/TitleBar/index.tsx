@@ -15,20 +15,28 @@ const minimizeElectron = () => {
   remote.BrowserWindow.getFocusedWindow().minimize();
 };
 
-export default () => (
-  <div styleName="title-bar">
-    <Label styleName="title-bar-label">IRONA</Label>
-    <WindowButtonContainer>
-      <WindowButton
-        icon="ChromeMinimize"
-        onClick={minimizeElectron}
-      />
-      <WindowButton
-        icon="ChromeClose"
-        background="red"
-        color="white"
-        onClick={killElectron}
-      />
-    </WindowButtonContainer>
-  </div>
-);
+type Props = {
+  showLabel?: boolean
+}
+
+export default (props: Props) => {
+  const { showLabel } = props;
+
+  return (
+    <div styleName="title-bar">
+      {showLabel && <Label styleName="title-bar-label">IRONA</Label>}
+      <WindowButtonContainer>
+        <WindowButton
+          icon="ChromeMinimize"
+          onClick={minimizeElectron}
+        />
+        <WindowButton
+          icon="ChromeClose"
+          background="red"
+          color="white"
+          onClick={killElectron}
+        />
+      </WindowButtonContainer>
+    </div>
+  );
+};

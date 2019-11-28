@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'components', 'index.tsx'),
+  entry: {
+    main: path.resolve(__dirname, 'src', 'components', 'main.tsx'),
+    alert: path.resolve(__dirname, 'src', 'components', 'alert.tsx'),
+  },
   mode: 'production',
   module: {
     rules: [
@@ -67,6 +70,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'),
     publicPath: '/',
-    filename: path.join('dist', 'app.js'),
+    filename: path.join('dist', '[name].js'),
   },
 };

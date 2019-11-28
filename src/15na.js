@@ -1,19 +1,20 @@
 /* IRONA AP Program is subject to the terms of the Mozilla Public License 2.0.
  * You can obtain a copy of MPL at LICENSE.md of root directory. */
 
+const fs = require('fs');
 const { app, nativeTheme, BrowserWindow } = require('electron');
 
 let mainWindow;
 const createWindow = () => {
   // Create
   mainWindow = new BrowserWindow({
-    width: 420,
+    width: 440,
     minWidth: 400,
-    height: 480,
+    height: 500,
     minHeight: 420,
     show: false,
     frame: false,
-    resizable: true,
+    resizable: false,
     backgroundColor: nativeTheme.shouldUseDarkColors ? '#2b2b2b' : '#fff',
     icon: nativeTheme.shouldUseDarkColors ? './assets/id-circle-brown.ico' : './assets/id-circle-white.ico',
     webPreferences: { nodeIntegration: true },
@@ -22,7 +23,11 @@ const createWindow = () => {
   // Load page
   if (process.env.IRONA_MODE === 'dev') {
     console.log('Running IRONA Client in development mode.');
-    mainWindow.loadURL('http://localhost:14833/');
+    const packageInfo = fs.readFileSync('./package.json').toString();
+    const port = JSON.parse(packageInfo).devPort;
+    mainWindow.loadURL(`http://localhost:${port}/index.html`).then(() => {
+      mainWindow.webContents.executeJavaScript(`IRONA.setDevPort(${port});`);
+    });
   } else {
     mainWindow.loadFile('public/index.html');
   }

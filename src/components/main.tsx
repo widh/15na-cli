@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { loadTheme } from 'office-ui-fabric-react';
 
-import Main from './Main';
+import MainPage from './MainPage';
 import TitleBar from './TitleBar';
 
 import * as theme from './theme';
@@ -12,6 +12,9 @@ import './style.scss';
 // Add theming features
 declare global { interface Window { IRONA: any; } }
 window.IRONA = {};
+window.IRONA.setDevPort = (port: number) : void => {
+  window.IRONA.port = port;
+};
 window.IRONA.applyPalette = () : void => {
   loadTheme(theme[document.body.dataset.theme]);
 };
@@ -40,8 +43,8 @@ window.IRONA.applyPalette();
 const primClient = document.getElementById('primClient');
 ReactDOM.render(
   <div styleName="client">
-    <TitleBar />
-    <Main />
+    <TitleBar showLabel />
+    <MainPage />
   </div>,
   primClient,
 );

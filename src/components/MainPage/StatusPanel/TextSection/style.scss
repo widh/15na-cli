@@ -1,0 +1,28 @@
+.textSection {
+  margin-bottom: 45px;
+
+  &:first-of-type {
+    margin-bottom: 65px;
+  }
+
+  &:not(:first-of-type) {
+    display: inline-block;
+  }
+
+  &:not(:last-of-type) {
+    margin-right: 50px;
+  }
+
+  * {
+    display: block;
+  }
+
+  .upperText {
+    color: skyblue;
+    font-weight: 600;
+  }
+
+  .lowerText {
+    color: var(--fore-color);
+  }
+}
