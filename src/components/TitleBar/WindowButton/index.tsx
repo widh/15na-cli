@@ -1,9 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Icon } from 'office-ui-fabric-react';
 import './style.scss';
 
-export default class WindowButtonView extends React.Component {
+const { remote } = window.module.require('electron');
+
+type Props = {
+  onClick: (e: any) => any
+  icon: string
+  background?: string
+  color?: string
+}
+
+type States = {
+  hover: boolean
+  push: boolean
+}
+
+class WindowButton extends React.Component<Props, States> {
+  static defaultProps = {
+    background: 'var(--over-color)',
+    color: remote.nativeTheme.shouldUseDarkColors ? 'white' : 'black',
+  }
+
   constructor(props) {
     super(props);
 
@@ -36,7 +54,7 @@ export default class WindowButtonView extends React.Component {
     };
     return (
       <button
-        className="window-button"
+        styleName="window-button"
         type="button"
         style={buttonStyle}
         onMouseOver={this.hoverOn}
@@ -53,15 +71,4 @@ export default class WindowButtonView extends React.Component {
   }
 }
 
-WindowButtonView.propTypes = {
-  icon: PropTypes.string.isRequired,
-  background: PropTypes.string,
-  color: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
-};
-
-const { remote } = window.module.require('electron');
-WindowButtonView.defaultProps = {
-  background: 'rgba(164, 164, 164, .5)',
-  color: remote.nativeTheme.shouldUseDarkColors ? 'white' : 'black',
-};
+export default WindowButton;

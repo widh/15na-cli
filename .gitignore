@@ -39,7 +39,8 @@ jspm_packages/
 .env.test
 
 # VS Code
-.vscode/
+.vscode/*
+!.vscode/settings.json
 
 # IRONA outputs
 public/dist/

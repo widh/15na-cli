@@ -7,10 +7,10 @@ let mainWindow;
 const createWindow = () => {
   // Create
   mainWindow = new BrowserWindow({
-    width: 720,
+    width: 420,
     minWidth: 400,
-    height: 420,
-    minHeight: 320,
+    height: 480,
+    minHeight: 420,
     show: false,
     frame: false,
     resizable: true,
@@ -33,6 +33,12 @@ const createWindow = () => {
   });
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
+  });
+  mainWindow.on('focus', () => {
+    mainWindow.webContents.executeJavaScript('IRONA.setFocus(true);');
+  });
+  mainWindow.on('blur', () => {
+    mainWindow.webContents.executeJavaScript('IRONA.setFocus(false);');
   });
 };
 

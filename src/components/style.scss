@@ -1,15 +1,18 @@
 body {
   margin: 0;
+  position: relative;
+  overflow: hidden;
 
-  #client {
+  &, * {
+    --over-color: rgba(164, 164, 164, .36);
+    -webkit-user-select: none;
+  }
+
+  .client {
     background-color: var(--back-color);
     padding-top: 30px;
     width: 100vw;
-    height: calc(100vh - 30px);
-
-    &, * {
-      color: var(--fore-color);
-    }
+    height: 100vh;
   }
 }
 

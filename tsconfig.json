@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "esnext",
+    "lib": [
+      "esnext", "dom",
+    ],
+    "allowJs": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "outDir": "public/dist",
+    "paths": {
+      "components/*": ["./src/components"],
+      "assets/*": ["./src/assets"],
+    },
+    "allowSyntheticDefaultImports": true,
+    "keyofStringsOnly": true,
+  },
+  "include": [
+    "./src/**/*",
+  ],
+  "exclude": [
+    "./node_modules/**/*",
+  ]
+}
