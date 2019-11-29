@@ -11,7 +11,7 @@
     color: gray;
 
     .generalHighlightText {
-      color: white;
+      color: var(--fore-color);
       font-family: Monaco, Menlo, Consolas, "Droid Sans Mono", Inconsolata, "Courier New", monospace;
     }
   }

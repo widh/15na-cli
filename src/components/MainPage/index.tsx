@@ -88,7 +88,7 @@ class MainPage extends React.Component<{}, States> {
 
     return io !== null ? (
       <main>
-        <StatusPanel regInfo={regInfo} hostURL={host} />
+        <StatusPanel regInfo={regInfo} hostURL={host} io={io} />
       </main>
     ) : (
       <main>

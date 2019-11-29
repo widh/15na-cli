@@ -1,6 +1,6 @@
 {
   "name": "15na-cli",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "IRONA Client: Fall alarm program",
   "main": "src/15na.js",
   "repository": "https://github.com/wldh-g/15na-cli.git",

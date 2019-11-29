@@ -226,8 +226,7 @@ export default class RegisterForm extends React.Component<Props, States> {
           <TextField
             id={clidInputID}
             styleName="register-field"
-            placeholder={recentCLID.length > 0 ? recentCLID : '123456abcdef'}
-            prefix="0x"
+            placeholder={recentCLID}
             disabled={serverConStatus.length > 0}
             errorMessage={clidInputErrorMessage.length > 0 && clidInputErrorMessage}
             onChange={this.hideClidInputErrorMessage}
