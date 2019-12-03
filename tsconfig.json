@@ -13,7 +13,6 @@
     "outDir": "public/dist",
     "paths": {
       "components/*": ["./src/components"],
-      "assets/*": ["./src/assets"],
     },
     "allowSyntheticDefaultImports": true,
     "keyofStringsOnly": true,
