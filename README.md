@@ -4,7 +4,7 @@
 
 This is a program that notifies fall detection from acquiring fall information from [15na-server](https://github.com/wldh-g/15na-server#readme).
 
-By building electron app, this works on almost all operating system include Mac, Windows, Linux.
+This works on almost all operating system include Windows, Linux, Mac.
 
 ### Requirements
 
@@ -13,8 +13,7 @@ By building electron app, this works on almost all operating system include Mac,
 ### How To Use
 
 1. `yarn` or `npm install -D`
-2. `yarn build` or `npm build`
-3. `yarn start` or `npm start`
+2. `yarn start` or `npm start`
 
 ---
 

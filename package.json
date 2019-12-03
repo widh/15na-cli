@@ -13,13 +13,16 @@
     "start-web": "set IRONA_MODE=dev&& set BABEL_ENV=dev&& webpack-dev-server --config=./.webpack.dev.js",
     "start-app": "set IRONA_MODE=dev&& electron .",
     "start-app-local": "set IRONA_MODE=prod&& electron .",
+    "start": "concurrently --kill-others \"npm run start-web\" \"npm run start-app\"",
     "build-app": "echo 'Not Implemented Yet'",
     "pack-app": "echo 'Not Implemented Yet'"
   },
   "build": {
     "appId": "org.wldh.irona",
     "productName": "IRONA",
-    "publish": [{}]
+    "publish": [
+      {}
+    ]
   },
   "engines": {
     "node": ">= 10.*"
@@ -48,6 +51,7 @@
     "@typescript-eslint/parser": "^2.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-react-css-modules": "^5.2.6",
+    "concurrently": "^5.0.0",
     "css-loader": "^3.2.0",
     "electron-builder": "^21.2.0",
     "eslint": "^6.7.0",
