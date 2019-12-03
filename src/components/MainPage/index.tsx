@@ -1,9 +1,11 @@
+/* IRONA Client Program is subject to the terms of the Mozilla Public License 2.0.
+ * You can obtain a copy of MPL at LICENSE.md of root directory. */
+
 import React from 'react';
 import { hot } from 'react-hot-loader';
 
 import StatusPanel from './StatusPanel';
 import RegisterForm from './RegisterForm';
-import './style.scss';
 
 const { remote } = window.module.require('electron');
 
