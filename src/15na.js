@@ -2,6 +2,7 @@
  * You can obtain a copy of MPL at LICENSE.md of root directory. */
 
 const fs = require('fs');
+const path = require('path');
 const { app, nativeTheme, BrowserWindow } = require('electron');
 
 let mainWindow;
@@ -16,7 +17,7 @@ const createWindow = () => {
     frame: false,
     resizable: false,
     backgroundColor: nativeTheme.shouldUseDarkColors ? '#2b2b2b' : '#fff',
-    icon: nativeTheme.shouldUseDarkColors ? './assets/id-circle-brown.ico' : './assets/id-circle-white.ico',
+    icon: path.join(__dirname, '15na.png'),
     webPreferences: { nodeIntegration: true },
   });
 
