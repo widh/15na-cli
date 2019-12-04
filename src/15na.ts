@@ -9,13 +9,13 @@ let mainWindow;
 const createWindow = () => {
   // Create
   mainWindow = new BrowserWindow({
-    width: 440,
-    minWidth: 400,
-    height: 500,
-    minHeight: 420,
+    width: 640,
+    minWidth: 640,
+    height: 540,
+    minHeight: 520,
     show: false,
     frame: false,
-    resizable: false,
+    resizable: true,
     backgroundColor: nativeTheme.shouldUseDarkColors ? '#2b2b2b' : '#fff',
     icon: path.join(__dirname, '15na.png'),
     webPreferences: { nodeIntegration: true },

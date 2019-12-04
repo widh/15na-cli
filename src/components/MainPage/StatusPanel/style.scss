@@ -7,8 +7,9 @@
 }
 
 .statusPanel {
-  padding: 80px 50px;
+  padding: calc(50vh - 187px) 9vw;
   animation: fade-in .5s ease-in;
+  transition: padding .3s ease;
 
   .generalText {
     color: gray;

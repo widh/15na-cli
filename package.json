@@ -1,8 +1,8 @@
 {
   "name": "15na-cli",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "IRONA Client: Fall alarm program",
-  "main": "src/15na.js",
+  "main": "src/15na.ts",
   "repository": "https://github.com/wldh-g/15na-cli.git",
   "author": "Jio <jio@wldh.org>",
   "license": "MPL-2.0",
@@ -36,6 +36,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-hot-loader": "^4.12.18",
+    "recharts": "^2.0.0-beta.1",
     "socket.io-client": "^1.7.4",
     "webpack": "^4.41.2"
   },

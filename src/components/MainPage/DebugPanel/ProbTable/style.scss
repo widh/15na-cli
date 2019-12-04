@@ -1,0 +1,48 @@
+@keyframes listHighlight {
+  0% { background-color: rgba(167, 167, 167, .2); }
+  80% { background-color: rgba(167, 167, 167, .2); }
+  100% { background-color: transparent; }
+}
+
+[data-automationid="DetailsRow"] {
+  animation: listHighlight 1s ease-in;
+}
+
+.probSection {
+  display: flex;
+
+  & > * {
+    margin: 0 auto;
+  }
+
+  :global {
+    .ms-DetailsList-contentWrapper {
+      overflow: auto;
+      height: calc(100vh - 220px);
+      padding-right: 5px;
+    }
+    .ms-DetailsRow, .ms-List-cell, .ms-DetailsRow-cell {
+      min-height: 27px;
+    }
+    .ms-DetailsRow-cell {
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
+
+    .prob-cell {
+      font-size: 15px;
+      font-family: 'Consolas', monospace;
+    }
+    .prob-{
+      &20 { background-color: firebrick; color: white; font-weight: 800; }
+      &19 { color: crimson; font-weight: 600; }
+      &18 { color: orange; font-weight: 600; }
+      &17 { color: yellowgreen; }
+      &16, &15 { color: olivedrab; }
+      &14, &13 { color: darkcyan; }
+      &12, &11, &10 { color: blue; }
+      &9, &8, &7, &6 { color: var(--fore-color); }
+      &5, &4, &3, &2, &1, &0 { color: gray; }
+    }
+  }
+}

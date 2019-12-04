@@ -3,16 +3,39 @@
 
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import { Pivot, PivotItem } from 'office-ui-fabric-react';
 
+import DebugPanel from './DebugPanel';
 import StatusPanel from './StatusPanel';
 import RegisterForm from './RegisterForm';
 
+import './style.scss';
+
 const { remote } = window.module.require('electron');
 
-interface PrimRegisterInfo {
+type Area = {
+  aid: string
+  name: string
+}
+
+type DebugConfig = {
+  slideInterval: number
+  txArray: Array<number>
+  rxArray: Array<number>
+  labels: Array<string>
+  targetLabelIndex: number
+  areas: Array<Area>
+  amplitude: boolean
+  phase: boolean
+  pps: number
+}
+
+type PrimRegisterInfo = {
   name: string
   areaCount: number
   connected: number
+  debugMode: boolean
+  debugConfig?: DebugConfig
 }
 
 type RegisterInfo = PrimRegisterInfo | null
@@ -35,6 +58,7 @@ class MainPage extends React.Component<{}, States> {
   }
 
   registerSocket(io) {
+    // Save basics
     this.setState({ io });
     io.on('disconnect', () => {
       io.close();
@@ -77,6 +101,7 @@ class MainPage extends React.Component<{}, States> {
       typeof info.name === 'string'
       && typeof info.areaCount === 'number'
       && typeof info.connected === 'number'
+      && typeof info.debugMode === 'boolean'
     ) {
       this.setState({ regInfo: info });
       resolve();
@@ -87,13 +112,36 @@ class MainPage extends React.Component<{}, States> {
 
   render() {
     const { io, regInfo, host } = this.state;
+    const statusPanel = <StatusPanel regInfo={regInfo} hostURL={host} io={io} />;
 
     return io !== null ? (
-      <main>
-        <StatusPanel regInfo={regInfo} hostURL={host} io={io} />
+      <main styleName="inner-app">
+        {
+          regInfo.debugMode && (
+            <Pivot>
+              <PivotItem headerText="Connection" itemIcon="PlugConnected">
+                {statusPanel}
+              </PivotItem>
+              <PivotItem headerText="Analysis" itemIcon="StackedLineChart">
+                <DebugPanel
+                  areas={regInfo.debugConfig.areas}
+                  tx={regInfo.debugConfig.txArray}
+                  rx={regInfo.debugConfig.rxArray}
+                  dataInterval={regInfo.debugConfig.slideInterval}
+                  labels={regInfo.debugConfig.labels}
+                  targetLabelIndex={regInfo.debugConfig.targetLabelIndex}
+                  io={io}
+                  procAmp={regInfo.debugConfig.amplitude}
+                  procPhase={regInfo.debugConfig.phase}
+                />
+              </PivotItem>
+            </Pivot>
+          )
+        }
+        { !regInfo.debugMode && statusPanel }
       </main>
     ) : (
-      <main>
+      <main styleName="inner-app">
         <RegisterForm
           registerInfo={this.registerInfo}
           registerSocket={this.registerSocket}

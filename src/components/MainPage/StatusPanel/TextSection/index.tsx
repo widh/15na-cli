@@ -11,7 +11,7 @@ interface Props {
   lowerTextSize?: 'xxLarge' | 'mega'
 }
 
-export default class StatusPanel extends React.Component<Props, {}> {
+export default class TextSection extends React.Component<Props, {}> {
   static defaultProps = {
     lowerTextSize: 'xxLarge',
   }

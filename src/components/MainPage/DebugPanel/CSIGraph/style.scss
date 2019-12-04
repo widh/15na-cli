@@ -1,0 +1,13 @@
+.csiSection {
+  color: var(--fore-color);
+
+  &:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+
+  .trxPairLabel {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+}

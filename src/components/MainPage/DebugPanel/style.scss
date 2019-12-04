@@ -1,0 +1,70 @@
+/* IRONA Client Program is subject to the terms of the Mozilla Public License 2.0.
+ * You can obtain a copy of MPL at LICENSE.md of root directory. */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.debugPanel {
+  padding: 15px;
+  animation: fade-in .5s ease-in;
+  transition: padding .3s ease;
+  display: table;
+  width: calc(100vw - 30px);
+
+  .debugPanelWrapper {
+    display: block;
+    height: calc(100vh - 104px);
+  }
+
+  .areaSelectionContainer{
+    display: flex;
+    height: 36px;
+    margin-bottom: 10px;
+
+    .areaSelectionGuide {
+      font-size: 14px;
+      color: var(--fore-color);
+      display: inline-block;
+      margin-right: 8px;
+      line-height: 31px;
+    }
+  }
+
+  .areaAnalysisContainer {
+    display: flex;
+    width: calc(100vw - 30px);
+    height: calc(100vh - 150px);
+    overflow-x: auto;
+
+    .areaCSIContainer {
+      min-width: 480px;
+      width: 480px;
+      height: calc(100vh - 200px);
+      margin-top: 20px;
+      margin-bottom: 20px;
+      overflow-y: auto;
+
+      & > * {
+        margin-right: 20px;
+      }
+    }
+
+    .areaDivider {
+      width: 0;
+      background: var(--over-color);
+      height: calc(100vh - 230px);
+      margin-top: 30px;
+      margin-left: 5px;
+      margin-bottom: 20px;
+    }
+
+    .areaPredContainer {
+      & > * {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
