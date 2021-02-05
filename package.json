@@ -62,7 +62,7 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-app": "^6.0.3",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "postcss-nested": "^4.2.1",
     "postcss-scss": "^2.0.0",
     "sass-loader": "^8.0.0",
